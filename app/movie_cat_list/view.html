@@ -1,0 +1,50 @@
+<h2>{{title}}</h2>
+<h4 ng-if='message'>{{message}}</h4>
+
+
+<div class="list-group">
+	<a  ng-repeat="list in subjects"  href="#" class="list-group-item ">
+		<span class="badge">{{list.rating.average}}</span>
+		<div class="media">
+			<div class="media-left">
+				<img id="douban-webp" class="media-object" ng-src="{{list.images.small}}" alt="{{list.title}}">
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading">{{list.title}}</h4>
+				<p>导演：<span ng-repeat="dir in list.directors">{{dir.name}} <span ng-if="!$last">、</span></span></p>
+				<p>类型：<span>{{list.genres.join('、')}}</span></p>
+			</div>
+		</div>
+	</a>
+
+</div>
+<div class="box" ng-show="!loading">
+
+	<p>总共是  {{totalCount}}  条记录
+		<strong>当前页&nbsp</strong>{{currentPages}}/{{allpages}}</p>
+	<ul class="pager">
+		<li ng-class="{disabled:currentPages<=1}"><a ng-click="goToPages(currentPages-1)">上一页</a></li>
+		<li ng-class="{disabled:currentPages>allpages-1}"><a ng-click="goToPages(currentPages+1)">下一页</a></li>
+	</ul>
+</div>
+
+
+
+<div class="mask" ng-show="loading">
+	<h4 class="loading_p_jaizai_zi">数据加载中.......</h4>
+	<div class="sk-cube-grid">
+
+	<div class="sk-cube sk-cube1"></div>
+	<div class="sk-cube sk-cube2"></div>
+	<div class="sk-cube sk-cube3"></div>
+	<div class="sk-cube sk-cube4"></div>
+	<div class="sk-cube sk-cube5"></div>
+	<div class="sk-cube sk-cube6"></div>
+	<div class="sk-cube sk-cube7"></div>
+	<div class="sk-cube sk-cube8"></div>
+	<div class="sk-cube sk-cube9"></div>
+</div>
+</div>
+
+
+
