@@ -30,7 +30,11 @@
 			$scope.allpages = 0;
 			// 标题
 			$scope.title ='';
-			HttpService.jsonp('http://api.douban.com/v2/movie/'+$routeParams.active,{count:count,start:start},function (data) {
+			// http://api.douban.com/v2/movie/in_theaters?count=20&start=5&q=4
+			// 这是索要请求的地址，但是，‘q’ 的参数对其数据都不会有影响
+			HttpService.jsonp('http://api.douban.com/v2/movie/'+$routeParams.active,
+				{count:count,start:start,q:$routeParams.q},
+				function (data) {
 				$scope.subjects = data.subjects;
 				$scope.title =  data.title;
 				$scope.totalCount = data.total;

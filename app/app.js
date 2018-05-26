@@ -13,6 +13,22 @@ var   mymodule = angular.module('movieCat', [
 
 // 设置控制器
 
+mymodule.controller('searchController',[
+	'$scope',
+	'$route',
+	function($scope,$route){
+	$scope.inputSearch='';
+
+	$scope.search = function(){
+		console.log($scope.inputSearch)
+		$route.updateParams({'active':'search','q':$scope.inputSearch})
+	}
+
+}])
+
+
+
+
 // 	mymodule.controller('NavController',['$scope','$location',function ($scope,$location) {
 //   		// 将数据进行暴露
 // 		$scope.location =$location;
