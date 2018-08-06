@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 var   mymodule = angular.module('movieCat', [
   'ngRoute',
+  'movieCat.details',
   'movieCat.list',
   'movieCat.direct.autoFocus'
 ])

@@ -3,7 +3,7 @@
 
 
 <div class="list-group">
-	<a  ng-repeat="list in subjects"  href="#" class="list-group-item ">
+	<a  ng-repeat="list in subjects"  href="#/details/{{list.id}}" class="list-group-item ">
 		<span class="badge">{{list.rating.average}}</span>
 		<div class="media">
 			<div class="media-left">
@@ -31,7 +31,7 @@
 
 
 <div class="mask" ng-show="loading">
-	<h4 class="loading_p_jaizai_zi">数据加载中.......</h4>
+
 	<div class="sk-cube-grid">
 
 	<div class="sk-cube sk-cube1"></div>
